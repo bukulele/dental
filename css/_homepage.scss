@@ -1,0 +1,89 @@
+@use "mixins";
+@import "colorschemes";
+
+.home {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
+  grid-template-rows: 30px 400px repeat(2, auto);
+  grid-template-areas:
+    ". . ."
+    "homeheader homeheader homeheader"
+    ". homeaboutclinic ."
+    ". homelocation .";
+  gap: 20px;
+  .home__header-image {
+    position: relative;
+    @include mixins.full-size;
+    grid-area: homeheader;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      object-fit: cover;
+      object-position: center center;
+      position: absolute;
+      @include mixins.full-size;
+      top: 0;
+      left: 0;
+    }
+    h1 {
+      padding: 20px;
+      border-radius: 10px;
+      align-self: flex-start;
+      margin-left: 50px;
+      z-index: 1;
+      color: white;
+      background-color: $main-dark;
+    }
+  }
+
+  .home__aboutclinic {
+    @include mixins.full-size;
+    grid-area: homeaboutclinic;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    p {
+      padding: 20px;
+      border-radius: 10px;
+    }
+    p:nth-of-type(2n) {
+      background-color: $main-light;
+    }
+  }
+
+  .home__doctors {
+    @include mixins.full-size;
+    grid-area: homedoctors;
+  }
+
+  .home__location {
+    @include mixins.full-size;
+    grid-area: homelocation;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "locationheader locationheader"
+      "locationmap locationcontacts";
+    gap: 10px;
+    place-items: center;
+    h2 {
+      grid-area: locationheader;
+      justify-self: start;
+    }
+    .home__map {
+      grid-area: locationmap;
+    }
+    .home__contacts {
+      grid-area: locationcontacts;
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}

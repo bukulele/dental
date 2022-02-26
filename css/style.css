@@ -1,0 +1,476 @@
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
+  grid-template-rows: 30px 400px auto;
+  grid-template-areas: ". . ." "contactsheader contactsheader contactsheader" ". contactscontainer .";
+  gap: 20px;
+}
+.contacts .contacts__header-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-area: contactsheader;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contacts .contacts__header-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.contacts .contacts__header-image h1 {
+  padding: 20px;
+  border-radius: 10px;
+  align-self: flex-start;
+  margin-left: 50px;
+  z-index: 1;
+  color: white;
+  background-color: #4f0a6f;
+}
+.contacts .contacts__contacts-container {
+  width: 100%;
+  height: 100%;
+  grid-area: contactscontainer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.contacts .contacts__contacts-container .contacts-container__block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.contacts .contacts__contacts-container .contacts-container__block h2 {
+  color: #4f0a6f;
+}
+.contacts .contacts__contacts-container .contacts-container__block p {
+  font-size: 20px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
+  grid-template-rows: 30px 400px auto;
+  grid-template-areas: ". . ." "servicesheader servicesheader servicesheader" ". serviceslist .";
+  gap: 20px;
+}
+.services .services__header-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-area: servicesheader;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.services .services__header-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.services .services__header-image h1 {
+  padding: 20px;
+  border-radius: 10px;
+  align-self: flex-start;
+  margin-left: 50px;
+  z-index: 1;
+  color: white;
+  background-color: #4f0a6f;
+}
+.services .services__list {
+  width: 100%;
+  height: 100%;
+  grid-area: serviceslist;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px 0;
+}
+.services .services__list .services__single-service {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid #d3c2db;
+  transition: height 0.3s ease-out;
+}
+.services .services__list .services__single-service .single-service__details {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.services .services__list .services__single-service .single-service__arrow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #d3c2db;
+  transition: transform 0.3s ease-out;
+}
+.services .services__list .services__single-service * {
+  pointer-events: none;
+}
+
+.doctors {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
+  grid-template-rows: 30px 400px auto;
+  grid-template-areas: ". . ." "doctorsheader doctorsheader doctorsheader" ". doctorslist .";
+  gap: 20px;
+}
+.doctors .doctors__header-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-area: doctorsheader;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.doctors .doctors__header-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center 22%;
+     object-position: center 22%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.doctors .doctors__header-image h1 {
+  padding: 20px;
+  border-radius: 10px;
+  align-self: flex-start;
+  margin-left: 50px;
+  z-index: 1;
+  color: white;
+  background-color: #4f0a6f;
+}
+.doctors .doctors__list {
+  width: 100%;
+  height: 100%;
+  grid-area: doctorslist;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px 0;
+}
+.doctors .doctors__list .doctors__single-doctor {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "doctorphoto doctorname" "doctorphoto doctordetails";
+  place-items: center;
+  border: 3px solid #d3c2db;
+  transition: all 0.3s ease-out;
+}
+.doctors .doctors__list .doctors__single-doctor .single-doctor__image {
+  grid-area: doctorphoto;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.doctors .doctors__list .doctors__single-doctor h4 {
+  grid-area: doctorname;
+}
+.doctors .doctors__list .doctors__single-doctor .single-doctor__details {
+  grid-area: doctordetails;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.doctors .doctors__list .doctors__single-doctor .single-doctor__arrow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #d3c2db;
+  transition: transform 0.3s ease-out;
+}
+.doctors .doctors__list .doctors__single-doctor * {
+  pointer-events: none;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
+  grid-template-rows: 30px 400px repeat(2, auto);
+  grid-template-areas: ". . ." "homeheader homeheader homeheader" ". homeaboutclinic ." ". homelocation .";
+  gap: 20px;
+}
+.home .home__header-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-area: homeheader;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home .home__header-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.home .home__header-image h1 {
+  padding: 20px;
+  border-radius: 10px;
+  align-self: flex-start;
+  margin-left: 50px;
+  z-index: 1;
+  color: white;
+  background-color: #4f0a6f;
+}
+.home .home__aboutclinic {
+  width: 100%;
+  height: 100%;
+  grid-area: homeaboutclinic;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.home .home__aboutclinic p {
+  padding: 20px;
+  border-radius: 10px;
+}
+.home .home__aboutclinic p:nth-of-type(2n) {
+  background-color: #d3c2db;
+}
+.home .home__doctors {
+  width: 100%;
+  height: 100%;
+  grid-area: homedoctors;
+}
+.home .home__location {
+  width: 100%;
+  height: 100%;
+  grid-area: homelocation;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "locationheader locationheader" "locationmap locationcontacts";
+  gap: 10px;
+  place-items: center;
+}
+.home .home__location h2 {
+  grid-area: locationheader;
+  justify-self: start;
+}
+.home .home__location .home__map {
+  grid-area: locationmap;
+}
+.home .home__location .home__contacts {
+  grid-area: locationcontacts;
+}
+.home .home__location .home__contacts p {
+  font-size: 20px;
+}
+
+.forclients {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
+  grid-template-rows: 30px 400px auto;
+  grid-template-areas: ". . ." "forclientsheader forclientsheader forclientsheader" ". forclientscontainer .";
+  gap: 20px;
+}
+.forclients .forclients__header-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-area: forclientsheader;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.forclients .forclients__header-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center 20%;
+     object-position: center 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.forclients .forclients__header-image h1 {
+  padding: 20px;
+  border-radius: 10px;
+  align-self: flex-start;
+  margin-left: 50px;
+  z-index: 1;
+  color: white;
+  background-color: #4f0a6f;
+}
+.forclients .forclients__forclients-container {
+  width: 100%;
+  height: 100%;
+  grid-area: forclientscontainer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.forclients .forclients__forclients-container .forclients-container__block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.forclients .forclients__forclients-container .forclients-container__block h2 {
+  color: #4f0a6f;
+}
+.forclients .forclients__forclients-container .forclients-container__block p {
+  font-size: 20px;
+}
+.forclients .forclients__forclients-container .forclients-container__block .forclients-container__docs {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {
+  width: 100%;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #4f0a6f;
+  display: grid;
+  grid-template-columns: 150px 250px 7fr 2fr 50px;
+  grid-template-rows: 100%;
+  grid-template-areas: "navlogo navcontacts navlinks navbooking navspecial";
+  place-items: center;
+  z-index: 10;
+}
+.nav * {
+  color: white;
+}
+.nav .nav__logo {
+  width: 100%;
+  height: 100%;
+  grid-area: navlogo;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav .nav__contacts {
+  grid-area: navcontacts;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav .nav__list {
+  width: 100%;
+  height: 100%;
+  grid-area: navlinks;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100%;
+}
+.nav .nav__list .nav__list-element {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  background-color: transparent;
+  transition: background-color 200ms ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .nav__list .nav__list-element a,
+.nav .nav__list .nav__list-element a:hover,
+.nav .nav__list .nav__list-element a:focus,
+.nav .nav__list .nav__list-element a:active {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .nav__list .nav__list-element:hover {
+  background-color: #d3c2db;
+  color: #4f0a6f;
+  transition: background-color 200ms ease-in;
+}
+.nav .nav__booking {
+  grid-area: navbooking;
+  border: none;
+  padding: 10px;
+  background-color: #0a6f4f;
+  color: white;
+  transition: all 200ms ease-in;
+}
+.nav .nav__booking:hover {
+  background-color: #c2dbd3;
+  color: #4f0a6f;
+  transition: all 200ms ease-in;
+}
+.nav .nav__special-version {
+  grid-area: navspecial;
+  width: 20px;
+  height: 20px;
+  border: none;
+  font-size: 18px;
+  background-color: transparent;
+}/*# sourceMappingURL=style.css.map */

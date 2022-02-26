@@ -1,0 +1,116 @@
+@use "contacts";
+@use "services";
+@use "doctors";
+@use "homepage";
+@use "forclients";
+@use "mixins";
+@import "colorschemes";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {
+  width: 100%;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: $main-dark;
+  display: grid;
+  grid-template-columns: 150px 250px 7fr 2fr 50px;
+  grid-template-rows: 100%;
+  grid-template-areas: "navlogo navcontacts navlinks navbooking navspecial";
+  place-items: center;
+  z-index: 10;
+  * {
+    color: white;
+  }
+
+  .nav__logo {
+    @include mixins.full-size;
+    grid-area: navlogo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav__contacts {
+    grid-area: navcontacts;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav__list {
+    @include mixins.full-size;
+    grid-area: navlinks;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100%;
+    .nav__list-element {
+      @include mixins.full-size;
+      list-style: none;
+      margin: 0;
+      background-color: transparent;
+      transition: background-color 200ms ease-in;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a,
+      a:hover,
+      a:focus,
+      a:active {
+        @include mixins.full-size;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .nav__list-element:hover {
+      background-color: $main-light;
+      color: $main-dark;
+      transition: background-color 200ms ease-in;
+    }
+  }
+
+  .nav__booking {
+    grid-area: navbooking;
+    border: none;
+    padding: 10px;
+    background-color: $opposite-dark;
+    color: white;
+    transition: all 200ms ease-in;
+  }
+
+  .nav__booking:hover {
+    background-color: $opposite-light;
+    color: $main-dark;
+    transition: all 200ms ease-in;
+  }
+
+  .nav__special-version {
+    grid-area: navspecial;
+    width: 20px;
+    height: 20px;
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,60 @@
+@use "mixins";
+@import "colorschemes";
+
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
+  grid-template-rows: 30px 400px auto;
+  grid-template-areas:
+    ". . ."
+    "contactsheader contactsheader contactsheader"
+    ". contactscontainer .";
+  gap: 20px;
+  .contacts__header-image {
+    position: relative;
+    @include mixins.full-size;
+    grid-area: contactsheader;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      @include mixins.full-size;
+      object-fit: cover;
+      object-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    h1 {
+      padding: 20px;
+      border-radius: 10px;
+      align-self: flex-start;
+      margin-left: 50px;
+      z-index: 1;
+      color: white;
+      background-color: $main-dark;
+    }
+  }
+  .contacts__contacts-container {
+    @include mixins.full-size;
+    grid-area: contactscontainer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    .contacts-container__block {
+      @include mixins.full-size;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      h2 {
+        color: $main-dark;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}

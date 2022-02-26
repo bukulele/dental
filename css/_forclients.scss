@@ -1,0 +1,65 @@
+@use "mixins";
+@import "colorschemes";
+
+.forclients {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
+  grid-template-rows: 30px 400px auto;
+  grid-template-areas:
+    ". . ."
+    "forclientsheader forclientsheader forclientsheader"
+    ". forclientscontainer .";
+  gap: 20px;
+  .forclients__header-image {
+    position: relative;
+    @include mixins.full-size;
+    grid-area: forclientsheader;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      @include mixins.full-size;
+      object-fit: cover;
+      object-position: center 20%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    h1 {
+      padding: 20px;
+      border-radius: 10px;
+      align-self: flex-start;
+      margin-left: 50px;
+      z-index: 1;
+      color: white;
+      background-color: $main-dark;
+    }
+  }
+  .forclients__forclients-container {
+    @include mixins.full-size;
+    grid-area: forclientscontainer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    .forclients-container__block {
+      @include mixins.full-size;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      h2 {
+        color: $main-dark;
+      }
+      p {
+        font-size: 20px;
+      }
+      .forclients-container__docs {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+  }
+}
