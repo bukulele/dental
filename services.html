@@ -40,7 +40,7 @@
           <a href="forclients.html"><p>Пациентам</p></a>
         </li>
       </ul>
-      <button class="nav__booking">ЗАПИСАТЬСЯ НА ПРИЁМ</button>
+      <button class="nav__booking" onclick="showBookingForm()">ЗАПИСАТЬСЯ НА ПРИЁМ</button>
       <button class="nav__special-version">
         <i class="fa-solid fa-eye-low-vision"></i>
       </button>
@@ -83,7 +83,18 @@
           </div>
         </div>
       </div>
+      <div id="booking-form" class="booking-form">
+        <form class="booking-form__form" action="https://formsubmit.co/your@email.com" method="POST">
+            <button class="booking-form__exit-button" onclick="hideBookingForm()"><i class="fa-solid fa-xmark"></i></button>
+            <h2>ЗАПИСЬ НА ПРИЁМ</h2>
+              <input type="text" name="name" placeholder="Ваше имя" required>
+              <input type="tel" name="tel" placeholder="Ваш номер телефона" minlength="6" maxlength="20" required>
+              <textarea name="message" maxlength="500" placeholder="Вы можете оставить здесь свои комментарии (не обязательно)" ></textarea>
+            <button type="submit" class="booking-form__submit-button">ЗАПИСАТЬСЯ</button>
+       </form> 
+      </div>
     </main>
     <script src="./js/services.js"></script>
+    <script src="./js/showBookingForm.js"></script>
   </body>
 </html>
