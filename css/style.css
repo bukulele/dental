@@ -27,10 +27,12 @@
   left: 0;
 }
 .contacts .contacts__header-image h1 {
+  position: absolute;
   padding: 20px;
   border-radius: 10px;
-  align-self: flex-start;
-  margin-left: 50px;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
   z-index: 1;
   color: white;
   background-color: #4f0a6f;
@@ -59,6 +61,20 @@
   font-size: 20px;
 }
 
+@media screen and (max-width: 1100px) {
+  .contacts .contacts__header-image h1 {
+    padding: 10px;
+    bottom: 10px;
+    left: 10px;
+    top: auto;
+    transform: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .contacts .contacts__header-image h1 {
+    font-size: 20px;
+  }
+}
 .services {
   display: grid;
   grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
@@ -88,10 +104,12 @@
   left: 0;
 }
 .services .services__header-image h1 {
+  position: absolute;
   padding: 20px;
   border-radius: 10px;
-  align-self: flex-start;
-  margin-left: 50px;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
   z-index: 1;
   color: white;
   background-color: #4f0a6f;
@@ -130,6 +148,20 @@
   pointer-events: none;
 }
 
+@media screen and (max-width: 1100px) {
+  .services .services__header-image h1 {
+    padding: 10px;
+    bottom: 10px;
+    left: 10px;
+    top: auto;
+    transform: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .services .services__header-image h1 {
+    font-size: 20px;
+  }
+}
 .doctors {
   display: grid;
   grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
@@ -159,10 +191,12 @@
   left: 0;
 }
 .doctors .doctors__header-image h1 {
+  position: absolute;
   padding: 20px;
   border-radius: 10px;
-  align-self: flex-start;
-  margin-left: 50px;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
   z-index: 1;
   color: white;
   background-color: #4f0a6f;
@@ -219,6 +253,20 @@
   pointer-events: none;
 }
 
+@media screen and (max-width: 1100px) {
+  .doctors .doctors__header-image h1 {
+    padding: 10px;
+    bottom: 10px;
+    left: 10px;
+    top: auto;
+    transform: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .doctors .doctors__header-image h1 {
+    font-size: 20px;
+  }
+}
 .home {
   display: grid;
   grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
@@ -248,10 +296,12 @@
   left: 0;
 }
 .home .home__header-image h1 {
+  position: absolute;
   padding: 20px;
   border-radius: 10px;
-  align-self: flex-start;
-  margin-left: 50px;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
   z-index: 1;
   color: white;
   background-color: #4f0a6f;
@@ -304,6 +354,40 @@
   font-size: 20px;
 }
 
+@media screen and (max-width: 1100px) {
+  .home .home__header-image h1 {
+    padding: 10px;
+    bottom: 10px;
+    left: 10px;
+    top: auto;
+    transform: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .home .home__header-image h1 {
+    font-size: 20px;
+  }
+  .home .home__location {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: "locationheader" "locationcontacts" "locationmap";
+    gap: 20px;
+  }
+  .home .home__location h2 {
+    grid-area: locationheader;
+    justify-self: start;
+  }
+  .home .home__location .home__map {
+    grid-area: locationmap;
+  }
+  .home .home__location .home__contacts {
+    grid-area: locationcontacts;
+  }
+  .home .home__location .home__contacts p {
+    font-size: 20px;
+  }
+}
 .forclients {
   display: grid;
   grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
@@ -333,10 +417,12 @@
   left: 0;
 }
 .forclients .forclients__header-image h1 {
+  position: absolute;
   padding: 20px;
   border-radius: 10px;
-  align-self: flex-start;
-  margin-left: 50px;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
   z-index: 1;
   color: white;
   background-color: #4f0a6f;
@@ -370,6 +456,20 @@
   gap: 20px;
 }
 
+@media screen and (max-width: 1100px) {
+  .forclients .forclients__header-image h1 {
+    padding: 10px;
+    bottom: 10px;
+    left: 10px;
+    top: auto;
+    transform: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .forclients .forclients__header-image h1 {
+    font-size: 20px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -391,7 +491,7 @@ main {
   height: 50px;
   background-color: #4f0a6f;
   display: grid;
-  grid-template-columns: 150px 250px 7fr 2fr 50px;
+  grid-template-columns: 150px 250px 7fr 200px 50px;
   grid-template-rows: 100%;
   grid-template-areas: "navlogo navcontacts navlinks navbooking navspecial";
   place-items: center;
@@ -473,6 +573,20 @@ main {
   border: none;
   font-size: 18px;
   background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .nav__burger-menu {
+  grid-area: navlinks;
+  width: 20px;
+  height: 20px;
+  border: none;
+  font-size: 18px;
+  background-color: transparent;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .booking-form {
@@ -543,4 +657,76 @@ main {
   color: #0a6f4f;
   background-color: #c2dbd3;
   transition: all 0.1s linear;
+}
+
+@media screen and (max-width: 1100px) {
+  .nav {
+    grid-template-columns: 150px 250px 1fr 200px 50px minmax(0px, 50px) 50px;
+    grid-template-rows: 100%;
+    grid-template-areas: "navlogo navcontacts . navbooking navspecial . navlinks";
+  }
+  .nav .nav__burger-menu {
+    display: flex;
+  }
+  .nav .nav__list {
+    grid-area: navlinks;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 250px;
+    height: auto;
+    visibility: hidden;
+    opacity: 0;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 100%;
+    transition: opacity 0.2s ease-in;
+  }
+  .nav .nav__list .nav__list-element {
+    width: 100%;
+    height: 40px;
+    list-style: none;
+    margin: 0;
+    background-color: white;
+    transition: background-color 200ms ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #4f0a6f;
+  }
+  .nav .nav__list .nav__list-element * {
+    color: #4f0a6f !important;
+  }
+  .nav .nav__list .nav__list-element a,
+.nav .nav__list .nav__list-element a:hover,
+.nav .nav__list .nav__list-element a:focus,
+.nav .nav__list .nav__list-element a:active {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  .nav {
+    grid-template-columns: 70px 200px 50px 1fr 50px;
+    grid-template-rows: 100%;
+    grid-template-areas: "navlogo navbooking navspecial . navlinks";
+    overflow: hidden;
+  }
+  .nav .nav__contacts {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 10px;
+    border-radius: 10px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }/*# sourceMappingURL=style.css.map */
